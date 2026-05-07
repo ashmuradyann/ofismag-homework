@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gray-01: rgb(179, 179, 179);
+  --white-01: rgb(238, 238, 238);
+  --hover: rgb(245, 245, 245);
+  --red-01: rgb(190, 16, 16);
+  --red-02: rgb(243, 70, 70);
+  --green-01: rgb(28, 143, 28);
+  --green-02: rgb(80, 196, 80);
+}
+
+.button {
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid var(--gray-01);
+  outline: none;
+  background-color: var(--white-01);
+  transition: .3s;
+
+  &:active {
+    filter: brightness(90%);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
+  &.btn-default {
+    &:hover {
+      background-color: var(--hover);
+    }
+  }
+
+  &.btn-red-outline {
+    border: 2px solid var(--red-01);
+    padding: 7px 14px;
+
+    &:hover {
+      background-color: var(--hover);
+    }
+
+    &:disabled {
+      border-color: var(--gray-01);
+    }
+  }
+
+  &.btn-green-outline {
+    border: 2px solid var(--green-01);
+    padding: 7px 14px;
+
+    &:hover {
+      background-color: var(--hover);
+    }
+
+    &:disabled {
+      border-color: var(--gray-01);
+    }
+  }
+
+  &.btn-red {
+    border-color: var(--red-01);
+    background-color: var(--red-01);
+    color: white;
+
+    &:hover {
+      background-color: var(--red-02);
+      border-color: var(--red-02);
+    }
+  }
+
+  &.btn-green {
+    border-color: var(--green-01);
+    background-color: var(--green-01);
+    color: white;
+
+    &:hover {
+      background-color: var(--green-02);
+      border-color: var(--green-02);
+    }
+  }
+
+  &.btn-arrow {
+    padding: 6.8px;
+    span {
+      color: var(--red-01);
+      margin-left: 3px;
+    }
+
+    &:disabled {
+      span {
+        color: var(--gray-01);
+      }
+    }
+    &:hover {
+      background-color: var(--hover);
+    }
+  }
+}
+
+body {
+  width: 100%;
+  padding: 16px;
+
+  .buttons-wrapper {
+    display: flex;
+    gap: 15px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  .icon-buttons {
+    margin-top: 15px;
+    display: flex;
+    gap: 20px;
+
+    .icon-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+
+      img {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+      }
+    }
+  }
+}

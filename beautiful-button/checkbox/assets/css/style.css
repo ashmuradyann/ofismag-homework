@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f0f0f0, #c5c5c5);
+  perspective: 1000px;
+}
+
+.switch {
+  width: 700px;
+  height: 420px;
+  margin: auto;
+  border-radius: 200px;
+  display: flex;
+  position: relative;
+  box-shadow:
+    0px 40px 20px 8px #bebebe,
+    0px -10px 14px -5px #ffffff;
+  cursor: pointer;
+
+  input {
+    appearance: none;
+    display: none;
+
+    &:checked + .track-wrapper .track {
+      .ball {
+        left: 50%;
+      }
+
+      .red-area {
+        left: 75%;
+      }
+
+      .green-area {
+        left: 0%;
+      }
+
+      .ball {
+        background-color: #34da3a;
+      }
+    }
+  }
+
+  .track-wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 70px;
+    border-radius: 200px;
+    background-color: #e7e7e7;
+    box-shadow:
+      inset 0px -15px 11px 10px #c5c5c5,
+      inset 0 2px 7px 10px #fff;
+
+    .track {
+      width: 100%;
+      height: 100%;
+      margin: auto;
+      border-radius: 170px;
+      position: relative;
+      overflow: hidden;
+      box-shadow:
+        0px 0px 7px 11px #bcbcbc,
+        -4px -3px 15px 20px #fff,
+        inset 0px 20px 17px 20px #00000036;
+
+      .green-area,
+      .red-area {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 420px;
+        height: 280px;
+        transition: 0.7s;
+      }
+
+      .green-area {
+        left: -50%;
+        background-color: #34da3a;
+        z-index: 1;
+      }
+
+      .red-area {
+        left: 25%;
+        background-color: #bd3d3d;
+        z-index: 1;
+      }
+
+      .ball {
+        width: 280px;
+        height: 280px;
+        display: block;
+        position: relative;
+        left: 0;
+        transition: 0.7s;
+        background: #bd3d3d;
+        border-radius: 150px;
+        box-shadow:
+          inset -1px -20px 20px 0px #27000073,
+          inset -6px -1px 13px 4px #27000073,
+          0px 20px 15px rgba(0, 0, 0, 0.5);
+        z-index: 4;
+      }
+
+      .shadow {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 560px;
+        height: 100%;
+        left: 0px;
+        top: 0;
+        border-radius: 170px;
+        box-shadow: inset 0px 20px 17px 20px #00000036;
+        z-index: 2;
+      }
+    }
+  }
+}

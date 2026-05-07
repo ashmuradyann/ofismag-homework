@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Форма</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <form class="form" onsubmit="return false">
+    <div class="top flex-between">
+      <p>Заполните поля</p>
+      <p>ну пожалуйста</p>
+    </div>
+    <table class="form-table flex-column">
+      <tbody class="flex-column">
+        <tr>
+          <td></td>
+          <td>Основное</td>
+        <tr>
+        <tr>
+          <td>Имя</td>
+          <td><input type="text" placeholder="по паспорту" required></td>
+        <tr>
+        <tr>
+          <td>Цвет вашего настроения</td>
+          <td><input type="color"></td>
+        <tr>
+        <tr class="comment-area">
+          <td></td>
+          <td>Дополнительное</td>
+        <tr>
+        <tr class="comment-area">
+          <td>Комментарий</td>
+          <td><textarea placeholder="Напишите хоть что-нибудь.&#10;Если хотите, конечно."></textarea></td>
+        <tr>
+        <tr>
+          <td></td>
+          <td class="flex-column">
+            <label class="radio-wrapper flex-center" for="radio1">
+              <div class="radio">
+                <input id="radio1" name="radio" type="radio">
+              </div>
+              Ну а тут просто полежит радиобатон
+            </label>
+            <label class="radio-wrapper flex-center" for="radio2">
+              <div class="radio">
+                <input id="radio2" name="radio" type="radio">
+              </div>
+              а тут другой радиобатон
+            </label>
+            <label for="checkbox" class="checkbox-wrapper flex-between">
+              <div class="checkbox">
+                <input type="checkbox" id="checkbox">
+              </div>
+              <p>Соглашаюсь на всё, что бы вы не придумали и осознаю, что это может озгначать <a href="#">что угодно</a>
+              </p>
+            </label>
+            <button class="btn-primary" type="submit">Отправить все мои данные</button>
+          </td>
+        <tr>
+      </tbody>
+    </table>
+  </form>
+</body>
+
+</html>
